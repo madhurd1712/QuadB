@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOLDINFO</title>
+    <link rel="stylesheet" href="/style.css"><link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <h1>HODLINFO<span>.com</span></h1>
+            <h4>Powered By <span>Finstreet</span></h4>
+        </div>
+        <div class="selectors">
+            <select name="cur" id="cur">
+                <option value="inr">INR</option>
+            </select>
+            <select name="name" id="name">
+                <option value="btc">BTC</option>
+            </select>
+            <br><br>
+        </div>
+        <div class="right">
+            <span class="count">58</span>
+            <button> <i class="fab fa-telegram-plane"></i> Connect Telegram</button>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>Last</th>
+            <th>Buy/Sell Price</th>
+            <th>volume</th>
+            <th>base_unit</th>
+        </tr>
+        <% if(data.length>0) { %>
+            <% data.forEach(data => { %>
+                <tr id="data">
+                    <td><%= data.index %></td>
+                    <td><%= data.name %></td>
+                    <td>Rs. <%= data.last %></td>
+                    <td>Rs. <%= data.buy %> / Rs.<%= data.sell %></td>
+                    <td><%= data.volume %></td>
+                    <td><%= data.base_unit %></td>
+                </tr>
+            <% }) %>
+        <% } %>
+    </table>
+    
+    
+    
+</body>
+</html>
