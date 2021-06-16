@@ -9,7 +9,7 @@ const dbURI = "mongodb+srv://mdDB:9175757673@cluster0.c3juf.mongodb.net/HOLDINFO
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
     .then((result) => app.listen(8080, () => console.log('Listening to port 8080')) )
-    .catch((err) => console.log(err))
+    .catch((err) => console.log(err));
 
 
 //middleware
